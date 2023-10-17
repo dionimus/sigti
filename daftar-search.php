@@ -49,7 +49,9 @@ $tempat_ibadah = query ("SELECT * FROM tb_tempat_ibadah
 		<a href="detail.php?id=<?php echo $row["id"]; ?>">
 		<div class="product-card">
 			<div class="product-img">
-				<img src="admin/img/<?php echo $row["foto"]; ?>">
+				<?php $id_ti = $row ['id']; ?>
+				<?php $foto = query("SELECT * FROM tb_foto WHERE id_ti = $id_ti")[0]; ?>
+				<img src="admin/img/<?php echo $foto["foto"]; ?>">
 			</div>
 			<div class="product-content">
 				<h3><?php echo $row["nama"]; ?></h3> 

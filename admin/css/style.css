@@ -470,8 +470,7 @@ figcaption{
 }
 
 .modal-content {
-    display: flex;
-    flex-wrap: nowrap;
+
 }
 
 .modal-container .close-icon {
@@ -480,8 +479,34 @@ figcaption{
     color: red;
 }
 
-.modal-content .product-content p {
+.modal-content .modal-content-desc {
+    background-color: #fff;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+}
+.modal-content .modal-content-desc p {
     font-size: 1.2rem;
     line-height: 1.8rem;
-    margin-top: 1.2rem;
 }
+
+.modal-content .modal-content-img {
+    margin-top: 2rem;
+    background-color: #fff;
+    display: flex;  
+    flex-flow: row wrap;  
+    width: 100%;
+    border-radius: 0.5rem;
+}
+.modal-content .modal-content-img .modal-img{
+    width: 13.2rem;
+    height: 100%;
+    margin: 1rem;
+    
+}
+.modal-content .modal-content-img img{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    }

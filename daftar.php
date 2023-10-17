@@ -11,10 +11,7 @@ $inisial = $_GET["inisial"];
 $tempat_ibadah = query ("SELECT * FROM tb_tempat_ibadah WHERE inisial = '$inisial' AND verify = '1'");
 
 
-
 $kategori = query ("SELECT * FROM tb_kategori WHERE inisial = '$inisial'")[0];
-
-
 
 ?>
 
@@ -53,7 +50,9 @@ $kategori = query ("SELECT * FROM tb_kategori WHERE inisial = '$inisial'")[0];
 		<a href="detail.php?id=<?php echo $row["id"]; ?>">
 		<div class="product-card">
 			<div class="product-img">
-				<img src="admin/img/<?php echo $row["foto1"]; ?>">
+				<?php $id_ti = $row ['id']; ?>
+				<?php $foto = query("SELECT * FROM tb_foto WHERE id_ti = $id_ti")[0]; ?>
+				<img src="admin/img/<?php echo $foto['foto']; ?>">
 			</div>
 			<div class="product-content">
 				<h3><?php echo $row["nama"]; ?></h3> 

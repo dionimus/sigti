@@ -11,6 +11,7 @@ require "../koneksi.php";
 
 $id = $_GET['id'];
 $ti = query ("SELECT * FROM tb_tempat_ibadah WHERE id = $id")[0];
+$foto = query ("SELECT * FROM tb_foto WHERE id_ti = $id");
  ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ $ti = query ("SELECT * FROM tb_tempat_ibadah WHERE id = $id")[0];
 
 
 <!--MyStyle-->
-	<link rel="stylesheet" type="text/css" href="css/style.css?v=9.7">
+	<link rel="stylesheet" type="text/css" href="css/style.css?v=4.7">
 
 </head>
 <body>
@@ -37,10 +38,14 @@ $ti = query ("SELECT * FROM tb_tempat_ibadah WHERE id = $id")[0];
 		<div class="modal-container">
 			<a href="kelola.php" class="close-icon"><i data-feather="x"></i></a>
 			<div class="modal-content">
-				<h3>Deskripsi</h3>
-				<div class="modal-content-desc">
+				<h3><?php echo $ti['nama']; ?></h3>
+				<div class="modal-content-img">
+					<?php foreach ($foto as $row) : ?>
+						<div class="modal-img">
+							<img src="img/<?php echo $row["foto"]; ?>">
+						</div>
+						<?php endforeach; ?>
 					
-					<p><?php echo $ti["deskripsi"]; ?></p>
 				</div>
 			</div>
 

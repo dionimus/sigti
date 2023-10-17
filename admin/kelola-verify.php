@@ -98,7 +98,7 @@ $kategori = query ("SELECT * FROM tb_kategori");
  				<td class="tdesc"><a href="modal.php?id=<?php echo $row["id"]; ?>" class="btn_modal">Detail</a></td>
  				<td class="tkor"><?php echo $row["longitude"]; ?></td>
  				<td class="tkor"><?php echo $row["latitude"]; ?></td>
- 				<td class="tfoto"><img src="img/<?php echo $row["foto1"]; ?>" class='kelola-img'></td>
+ 				<td class="tfoto"><a href="modal-foto.php?id=<?php echo $row["id"]; ?>" class="btn_modal_img">Lihat Foto</a></td>
  				<td class="add"><?php echo $row["add"]; ?></td>
  				<td class="edit"><?php echo $row["edit"]; ?></td>
  				<td class="addBy"><?php echo $row["addBy"]; ?></td>
@@ -127,7 +127,7 @@ $kategori = query ("SELECT * FROM tb_kategori");
  				<td class="tdesc"><a href="modal.php?id=<?php echo $row["id"]; ?>" class="btn_modal">Detail</a></td>
  				<td class="tkor"><?php echo $row["longitude"]; ?></td>
  				<td class="tkor"><?php echo $row["latitude"]; ?></td>
- 				<td class="tfoto"><img src="img/<?php echo $row["foto1"]; ?>" class='kelola-img'></td>
+ 				<td class="tfoto"><a href="modal-foto.php?id=<?php echo $row["id"]; ?>" class="btn_modal_img">Lihat Foto</a></td>
  				<td class="add"><?php echo $row["add"]; ?></td>
  				<td class="edit"><?php echo $row["edit"]; ?></td>
  				<td class="addBy"><?php echo $row["addBy"]; ?></td>

@@ -20,7 +20,6 @@ document.querySelector('#search-button').onclick = (e) => {
 };
 
 
-
 // klik diluar elemen
 const hm =  document.querySelector('#hamburger-menu');
 const sb =  document.querySelector('#search-button');

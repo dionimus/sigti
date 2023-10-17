@@ -22,6 +22,9 @@ $nama = query ("SELECT * FROM tb_admin WHERE username = '$us'")[0];
 if (isset ($_POST["submit"])) {
 
 	if (ubahver ($_POST) > 0) {
+			if (ubahUpload ($_POST) > 0) {
+
+		}
 		echo "
 		<script>
 		 alert ('data berhasil diubah')
@@ -76,7 +79,7 @@ if (isset ($_POST["submit"])) {
 	<div class="container-tambah-data">
 		<h1>Ubah Data Tempat Ibadah</h1>
 		<form action="" method="post" enctype="multipart/form-data">
-			<input type="hidden" name="id" value="<?php echo $ti ["id"]; ?>">
+			<input type="hidden" name="id_ti" value="<?php echo $ti ["id"]; ?>">
 			<input type="hidden" name="inisial" value="<?php echo $ti ["inisial"]; ?>">
 			
 			<div class="input-group">
@@ -110,9 +113,10 @@ if (isset ($_POST["submit"])) {
 				<label>Alamat</label>
 				<input type="text" name="jalan" id="jalan" required value="<?php echo $ti ["jalan"]; ?>">
 			</div>
-			<div class="input-group">
+			<div class="input-group-desc">
 				<label>Deskripsi</label>
-				<input type="text" name="deskripsi" id="deskripsi" required value="<?php echo $ti ["deskripsi"]; ?>">
+				
+				<textarea type="text" name="deskripsi" id="deskripsi" required ><?php echo $ti ["deskripsi"]; ?></textarea>
 			</div>
 			<div class="input-group">
 				<label>Longitude</label>
@@ -124,25 +128,26 @@ if (isset ($_POST["submit"])) {
 			</div>
 			
 			<!-- foto start -->
+				<?php foreach ($foto as $ft) : ?>
 			<div class="input-group">
-				<label>Foto1</label>
-				<input type="hidden" name="fotoLama1" value="<?php echo $ti ["foto1"]; ?>">
-				<img src="img/<?php echo $ti ["foto1"];?>">
-				<input type="file" name="foto1" id="foto">
+				<img src="img/<?php echo $ft ["foto"];?>" id='ubah-img'>
+				<input type="hidden" name="fotolama[]" value="<?php echo $ft ["foto"];?>">
+				<input type="hidden" name="id[]" value="<?php echo $ft ["id"];?>">
+				<input type="file" name="fotoubah[]">
+				<a href="hapus-foto.php?id=<?php echo $ft["id"]; ?>" class="btn_hapus_x" onclick='window.location.reload();'>X</a>
 			</div>
+			<?php endforeach; ?>
+			
 			<div class="input-group">
-				<label>Foto1</label>
-				<input type="hidden" name="fotoLama2" value="<?php echo $ti ["foto2"]; ?>">
-				<img src="img/<?php echo $ti ["foto2"];?>">
-				<input type="file" name="foto2" id="foto">
+				<input type="file" id="foto" name="foto[]"  onchange="preview()" multiple>
+				<p id="number">No Files Chosen</p>
 			</div>
-			<div class="input-group">
-				<label>Foto1</label>
-				<input type="hidden" name="fotoLama3" value="<?php echo $ti ["foto3"]; ?>">
-				<img src="img/<?php echo $ti ["foto3"];?>">
-				<input type="file" name="foto3" id="foto">
+			<div class="input-group-img">
+				<div id="images"></div>
 			</div>
 			<!-- foto end -->
+
+			<input type="hidden" name="count" value="<?php echo $count;?>">
 
 			<input type="hidden" name="add" id="add"  value="<?php echo $ti ["add"]; ?>">
 			<input type="hidden" name="edit" id="edit"  value="<?php
@@ -156,5 +161,6 @@ if (isset ($_POST["submit"])) {
 
 	</form>
 	</div>
+	<script src="js/script.js"></script>
 </body>
 </html>
