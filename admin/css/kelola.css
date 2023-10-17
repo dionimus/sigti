@@ -1,0 +1,142 @@
+:root{	
+--primary: #086623;
+--bg: #222021;
+}
+
+* {
+	font-family: 'Poppins' , sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+}
+
+body{
+	min-height: 100vh;
+}
+
+.container {
+	position: relative;
+	display: flex;
+	left: 21%;
+	top: 5rem;
+	right: 5%;
+}
+
+.container .kelola .title {
+	display: block;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-size: 1.2rem;
+	padding: 0.5rem;
+}
+
+
+.container .kelola .kategori a{
+	display: inline-block;
+	margin: 0.5rem 0.7rem 0.5rem;
+	padding: 0.5rem 1rem;
+	background-color: var(--primary);
+	border-radius: 0.7rem;
+	color: white;
+	font-size: 0.9rem;
+	box-shadow:2px 2px 5px black;
+}
+
+
+
+.search {
+	display: inline-block;
+	width: 30rem;
+	height: 3rem;
+	margin: 1rem;
+}
+
+.search input {
+	left: 0;
+	font-size: 1.2;
+	border: 1px solid black;
+	width: 70%;
+	height: 70%;
+	border-radius: 0.5rem;
+}
+
+.search button {
+	cursor: pointer;
+	border: none;
+	font-size: 1.2;
+	border: 1px solid black;
+	width: 20%;
+	height: 70%;
+	border-radius: 0.5rem;
+	color: #fff ;
+	background-color: var(--primary);
+	box-shadow:2px 2px 5px black;
+}
+
+
+table{
+ position: absolute;
+ left: 1%;
+ border-collapse: collapse;
+ border-spacing: 0;
+ box-shadow: 0 2px 15px rgba(64,64,64,.7);
+ border-radius: 5px;
+ overflow: hidden;
+ font-size: 12px;	
+}
+
+th{
+ padding: 15px 5px;
+ text-align: center;
+}
+td{
+ padding: 8px 5px;
+ text-align: left;
+ vertical-align: top;
+}
+
+
+.tno {
+	width: 1rem;
+}
+.tkode {
+	width: 2rem;
+}
+.tnama {
+	width: 9rem;
+}
+.talamat {
+	width: 10rem;
+}
+.tdesc {
+	width: 5rem;
+}
+.taksi {
+	width: 6rem;
+}
+
+
+th{
+ background-color: var(--primary);
+ color: #fafafa;
+ font-family: 'Poppins',Sans-serif;
+ font-weight: 400;
+ text-transform: uppercase;
+
+}
+tr{
+ width: 100%;
+ background-color: #fafafa;
+ font-family: 'Poppins', sans-serif;
+}
+tr:nth-child(even){
+ background-color: #eeeeee;
+}
+
+.kelola-img {
+	width: 4rem;
+	height: 4rem;
+	object-fit: cover;
+}

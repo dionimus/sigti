@@ -1,0 +1,487 @@
+:root{	
+--primary: #086623;
+--bg: #222021;
+}
+
+* {
+	font-family: 'Poppins' , sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+}
+
+body{
+	min-height: 100vh;
+}
+
+.sidebar {
+	position: fixed;
+	background:var(--primary);
+	width: 20vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	top: 0;
+	left: 0;
+	bottom: 0;
+    z-index: 9999;
+}
+
+.sidebar .brand {
+	height: 5rem;
+	padding: 10px 40px;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	border-bottom: 2px solid green;
+	margin-bottom: 2rem;
+	color: var(--bg);
+	cursor: pointer;
+}
+
+.sidebar .brand i {
+	font-size: 2rem;
+}
+
+
+.sidebar ul li a {
+	font-size: 18px;
+	padding: 10px 40px;
+	color: white;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.sidebar ul li a:hover {
+    background-color: var(--bg);
+}
+
+/*navbar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(1, 1, 1, 0.8);
+    border-bottom: 1px solid #333;
+    position: fixed;
+    top: 0;
+    left: 20vw;
+    right: 0;
+    z-index: 999;
+}
+
+.navbar .navbar-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+}
+
+.times{
+    padding: 3rem;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    transform: translate(50%, -50%);
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+
+/*contaiener halaman kelola data*/
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 21%;
+    top: 5rem;
+    width: 67rem;
+    height: 36rem;
+}
+
+.container h2{
+    font-size: 2rem;
+    right: 100%;
+    font-weight: 700;
+    padding-left: 1.5rem;
+}
+.container h2 span{
+    font-size: 2rem;
+    right: 100%;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.count {
+    position: relative;
+    display: inline-block;
+    left: 0;
+    width: 50rem;
+    margin-top: 1rem;
+    padding: 1rem;
+
+}
+
+.count .count-ti{
+    display: inline-block;  
+    background-color: #ddd;
+    width: 12rem;
+    height: 7rem;
+    margin: 0.8rem;
+    text-align: left;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
+
+.count .count-ti h3{
+    font-size: 1.2rem;
+    padding: 0.2rem     ;
+    font-weight: 400;
+    border-bottom: 1px solid black;
+}
+
+.count .count-ti .ver{
+    display: inline;
+    font-size: 2.7rem;
+    padding: 0 2rem;
+    font-weight: 400;
+    align-items: center;
+    color: green;
+    border-right: 1px solid black;
+}
+
+.count .count-ti .nover{
+    display: inline;
+    font-size: 2.7rem;
+    padding: 1rem 1rem;
+    font-weight: 400;
+    align-items: center;
+    color: red;
+}
+
+.btn-back {
+    background-color: var(--primary);
+    padding: 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: white;
+    font-weight: 400;
+    margin-left: 1.5rem;   
+}
+
+/*tambah data*/
+.container-tambah-data {
+	position: relative;
+    left: 20%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 20px 25px;
+    height: 90%;
+    width: 800px;
+    background-color: rgba(0,0,0,.7);
+    box-shadow: 1px 1px 10px black;
+    border-radius: 1rem;
+}
+
+.container-tambah-data h1 {
+    text-shadow: 2px 2px 5px black;
+    color: #997950;
+    padding-top: 1rem ;
+    text-align: center;
+}
+
+.container-tambah-data form {
+    flex: 1 1 45rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.container-tambah-data form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: #fff;
+    border: 5px solid #eee;
+    padding-left: 1rem;
+    border-radius: 0.5rem;
+    border: none;
+}
+.container-tambah-data form .input-group-alamat {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    border: 5px solid #eee;
+    padding-left: 0;
+    border: none;
+    color: black;
+    height: 5rem;
+}
+
+.container-tambah-data form .input-group-alamat #kecamatan,
+.container-tambah-data form .input-group-alamat #kelurahan{
+    width:15rem;
+    margin-right:  1rem;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    height: 50%;
+    resize: none;
+    align-items:center;
+    background-color: white;
+    border-radius: 0.5rem;
+}
+
+.container-tambah-data form .input-group-alamat-jalan {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: white;
+    border: 5px solid #eee;
+    padding-left: 1rem;
+    border-radius: 0.7rem;
+    border: none;
+    color: black;
+    height: 5rem;
+}
+
+
+
+.container-tambah-data form .input-group-alamat-jalan textarea {
+    width:100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    height: 100%;
+    resize: none;
+}
+
+.container-tambah-data form .input-group-alamat-jalan input {
+    width:100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+}
+
+.container-tambah-data form .input-group-desc {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: white;
+    border: 5px solid #eee;
+    padding-left: 1rem;
+    border-radius: 0.7rem;
+    border: none;
+    color: black;
+    height: 8rem;
+}
+
+.container-tambah-data form .input-group-desc textarea {
+    width:100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    height: 90%;
+    display: flex;
+    resize: none;
+}
+
+.container-tambah-data form .input-group input {
+    width:100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    
+}
+
+.container-tambah-data .input-group-img {
+    margin-top: 1.2rem;
+    width: 100%;
+    display: inline-block;
+    background-color: white;
+    border-radius: 0.7rem;
+}
+
+.container-tambah-data .input-group-img #images{
+    width: 50%;
+    height: 50%;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+}
+.container-tambah-data .input-group #ubah-img{
+    width: 7rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    background-color: red;
+}
+.container-tambah-data .input-group .btn_hapus_x {
+    color: red;
+    font-size: 0.8rem;
+    margin-right: 1rem;
+    font-weight: 700;
+}
+
+.container-tambah-data .input-group .btn_hapus_x:hover{
+    transform: scale(1.3);
+ }   
+
+.container-tambah-data form button {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 0.75rem;
+    color: #fff ;
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    box-shadow:2px 2px 5px black;
+}
+
+
+.container-tambah-data form button:hover {
+    transform: scale(1.1);
+}
+
+img{
+    object-fit: contain;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+figure{
+    width: 100%;
+    margin: 0.2rem 1rem 0.2rem;
+}
+figcaption{
+    text-align: left;
+    font-size: 1rem;
+    
+}
+
+/*registrasi*/
+
+.container-registrasi {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 25px;
+    height: 550px;
+    width: 500px;
+    background-color: rgba(0,0,0,.7);
+    box-shadow: 1px 1px 10px black;
+    border-radius: 1.5rem;
+}
+
+
+.container-registrasi h1 {
+    text-shadow: 2px 2px 5px black;
+    color: var(--primary);
+    padding-top: 1rem ;
+    text-align: center;
+}
+
+.container-registrasi form {
+    flex: 1 1 45rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.container-registrasi form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: white;
+    border: 5px solid #eee;
+    padding-left: 2rem;
+    border-radius: 2rem;
+    border: none;
+    color: black;
+}
+
+.container-registrasi form .input-group input {
+    width:100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+}
+
+.container-registrasi form .input-group select {
+    width:100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+}
+
+.container-registrasi form button {
+    margin-top: 1.5rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 0.75rem;
+    color: #fff ;
+    background-color: var(--primary);
+    cursor: pointer;
+    border-radius: 2rem;
+    border: none;
+    box-shadow:2px 2px 5px black;
+}
+
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6) ;
+}
+
+.modal-container {
+    position: relative;
+    background-color: #eee;
+    color: black;
+    margin: 15% auto;
+    padding: 1.8rem;
+    border: 1px solid black;
+    width: 80%;
+    overflow-y: auto;
+}
+
+.modal-content {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.modal-container .close-icon {
+    position: absolute;
+    right: 1rem;
+    color: red;
+}
+
+.modal-content .product-content p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    margin-top: 1.2rem;
+}
